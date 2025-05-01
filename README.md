@@ -3,8 +3,6 @@ Efficient Page Replacement Algorithm Simulator
 
 A visual simulator for comparing the performance of FIFO, LRU, and Optimal page replacement algorithms used in operating systems memory management.
 
-![Page Replacement Simulator Screenshot]()
-
 Overview
 
 This project provides both a web-based and desktop interface for simulating page replacement algorithms. Users can input a reference string and frame count to visualize how different page replacement strategies perform under the same conditions.
