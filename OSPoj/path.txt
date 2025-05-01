@@ -1,0 +1,42 @@
+1.Create directories:
+my_project/
+├── UI/
+│   ├── app.js
+│   └── fn.css
+│   └── fn.html
+├──API/
+|   ├── page_replacement.py
+|   ├── visualization.py
+|   ├── server.py
+|   ├── opt.py
+└── requirements.txt
+
+2.Copy files:
+Copy the provided files into their corresponding locations
+
+3: Install Required Packages
+I>Create requirements.txt with the following content
+flask==2.0.1
+flask-cors==3.0.10
+matplotlib==3.5.1
+numpy==1.22.3
+
+II>Install packages:
+Navigate to your project folder in Command Prompt/Terminal
+Run: pip install -r requirements.txt
+
+4.Start the Server
+
+Run the server:
+Navigate to your project folder in Command Prompt/Terminal
+Run: python server.py
+You should see output indicating the server is running on port 5001
+
+5.Access the Application
+
+Open in browser:
+Open your web browser
+Navigate to: http://localhost:5001
+The page replacement simulator interface should appear  
+
+

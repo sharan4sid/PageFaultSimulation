@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Replacement Visualizer</title>
+  <link rel="stylesheet" href="fn.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-microchip"></i> Memory Page Simulator</h1>
+      <p class="subtitle">Visualize FIFO, LRU & OPT Algorithms</p>
+    </div>
+
+    <!-- Input Group -->
+    <div class="input-group">
+      <div class="input-card">
+        <label><i class="fas fa-list-ol"></i> Reference Sequence</label>
+        <input type="text" id="referenceString" placeholder="Example: 7 0 1 2 0 3 0 4">
+      </div>
+      
+      <div class="input-card">
+        <label><i class="fas fa-layer-group"></i> Frame Capacity</label>
+        <div class="frame-control">
+          <input type="number" id="frames" min="1" max="10" value="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulation Button -->
+    <button class="simulate-btn" id="runBtn">
+      <i class="fas fa-play"></i> Run Simulation
+      <div class="hover-effect"></div>
+    </button>
+
+    <!-- Results Panel -->
+    <div class="results-panel">
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <span>Analyzing memory patterns...</span>
+      </div>
+
+      <!-- Error Container -->
+      <div class="error" id="error"></div>
+      
+      <div class="results" id="results">
+        <div class="algorithms-column">
+          <div class="algorithm-card fifo">
+            <h3><i class="fas fa-clock"></i> FIFO</h3>
+            <div class="fault-count" id="fifoResult">0</div>
+            <div class="stat-label">PAGE FAULTS</div>
+          </div>
+          
+          <div class="algorithm-card lru">
+            <h3><i class="fas fa-history"></i> LRU</h3>
+            <div class="fault-count" id="lruResult">0</div>
+            <div class="stat-label">PAGE FAULTS</div>
+          </div>
+
+          <div class="algorithm-card opt">
+            <h3><i class="fas fa-star"></i> OPT</h3>
+            <div class="fault-count" id="optResult">0</div>
+            <div class="stat-label">PAGE FAULTS</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="chart-container" id="chart"></div>
+  <div class="algo-explanations" data-aos="fade-up">
+    <h2 data-aos="fade-right" style="text-align: center; font-weight: bold; margin-top: 40px;">
+      How the Algorithms Work
+    </h2>
+    <p>
+      In all algorithms, if a page fault occurs, we first check if the frame has any free spaces. If so, we simply append the new page into the frame. If there are no free spaces,
+      we do different methods according to different algorithms.
+      <hr>
+      <strong>First In First Out (FIFO)</strong>
+      <br>
+      For the FIFO algorithm, we remove pages in the order they entered the frame, similar to a queue. When a new page is needed, it replaces the "oldest" page (front of the queue). 
+      After replacement, the next page becomes the new oldest.
+      
+      <hr>
+      <strong>Least Recently Used (LRU)</strong>
+      <br>
+      LRU tracks page usage. When a page is referenced, it's moved to the "most recent" position. During replacement, the least recently used page (furthest from recent access) 
+      is replaced. This maintains a usage order rather than insertion order.
+      
+      <hr>
+      <strong>Optimal Page Replacement (OPT)</strong>
+      <br>
+      This theoretical approach replaces the page that won't be used for the longest time in the future. While it offers the lowest page-fault rate, it's impractical 
+      as it requires future knowledge of page requests.
+    </p>
+  </div>
+
+  <!-- External Script -->
+  <script src="app.js" defer></script>
+</body>
+</html>
