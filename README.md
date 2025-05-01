@@ -24,7 +24,7 @@ Installation
 
 1. Clone the repository
 bash
-git clone https://github.com/username/page-replacement-simulator.git
+git clone https://github.com/sharan4sid/OS_Project-
 cd page-replacement-simulator
 
 
