@@ -1,5 +1,4 @@
-# OS_Project
-Efficient Page Replacement Algorithm Simulator
+#Efficient Page Replacement Algorithm Simulator
 
 A visual simulator for comparing the performance of FIFO, LRU, and Optimal page replacement algorithms used in operating systems memory management.
 
